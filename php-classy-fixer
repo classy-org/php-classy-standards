@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+$args = $argv;
+array_shift($args);
+array_splice($args, 1, 0, [
+    '--config=' . __DIR__ . '/rules.php',
+    '--show-progress=estimating',
+    '--verbose'
+]);
+
+$cmd = getcwd() . '/vendor/bin/php-cs-fixer ' . implode(' ', $args);
+exec($cmd, $output, $exitCode);
+foreach ($output as $line) {
+    echo "$line\n";
+}
+
+exit($exitCode);

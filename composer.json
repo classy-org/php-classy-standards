@@ -1,0 +1,9 @@
+{
+    "name": "classy-org/php-classy-standards",
+    "description": "A tool to automatically check and fix PHP files according to Classy coding standards",
+    "bin": ["php-classy-fixer", "php-classy-precommit-hook"],
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.0"
+    },
+    "license": "MIT"
+}

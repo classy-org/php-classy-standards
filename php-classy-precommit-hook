@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+echo "Running pre-commit hook.\n";
+
+exec('git diff --cached --name-status --diff-filter=ACM', $output);
+
+foreach ($output as $file) {
+    echo "Scanning file: $file\n";
+    $fileName = trim(substr($file, 1));
+
+    // Limit to PHP files
+    if (pathinfo($fileName, PATHINFO_EXTENSION) == 'php') {
+        // Lint
+        $lint_output = array();
+        exec('php -l ' . escapeshellarg($fileName), $lint_output, $return);
+
+        if ($return == 0) {
+            exec(getcwd() . "/vendor/bin/php-classy-fixer fix ${fileName}");
+            exec("git add {$fileName}");
+        } else {
+            echo implode("\n", $lint_output) . "\n";
+            exit(1);
+        }
+    }
+}
+
+exit(0);
