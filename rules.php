@@ -41,7 +41,7 @@ return Config::create()
             'align_double_arrow' => true,
             'align_equals'       => null, // = ignore
         ],
-        'self_accessor'                      => true,
+        'self_accessor'                      => false,
         'single_quote'                       => true,
         'standardize_not_equals'             => true,
         'unary_operator_spaces'              => true,
