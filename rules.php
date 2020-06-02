@@ -38,8 +38,10 @@ return Config::create()
         'no_blank_lines_after_phpdoc'        => true,
         'object_operator_without_whitespace' => true,
         'binary_operator_spaces'             => [
-            'align_double_arrow' => true,
-            'align_equals'       => null, // = ignore
+            'default' => 'single_space',
+            'operators' => [
+                '=>' => 'align_single_space_minimal'
+            ],
         ],
         'self_accessor'                      => false,
         'single_quote'                       => true,
