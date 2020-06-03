@@ -39,7 +39,7 @@ return Config::create()
         'object_operator_without_whitespace' => true,
         'binary_operator_spaces'             => [
             'align_double_arrow' => true,
-            'align_equals'       => null, // = ignore
+            'align_equals'       => false,
         ],
         'self_accessor'                      => false,
         'single_quote'                       => true,
