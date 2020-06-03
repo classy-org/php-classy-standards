@@ -7,14 +7,14 @@ $finder = Finder::create()->in(getcwd());
 
 return Config::create()
     ->setRules([
-        '@PhpCsFixer',
+        '@Symfony',
         'concat_space' => ['spacing' => 'one'],
         'binary_operator_spaces' => [
-            'default' => 'single_space',
-            'operators' => [
-                '=>' => 'align_single_space_minimal'
-            ],
+            'align_double_arrow' => true,
+            'align_equals' => false,
         ],
+        'self_accessor' => false,
+        'phpdoc_order' => true
     ])
     ->setFinder($finder)
     ->setUsingCache(true)
