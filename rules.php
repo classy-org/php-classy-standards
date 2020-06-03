@@ -7,7 +7,7 @@ $finder = Finder::create()->in(getcwd());
 
 return Config::create()
     ->setRules([
-        '@Symfony',
+        '@Symfony' => true,
         'concat_space' => ['spacing' => 'one'],
         'binary_operator_spaces' => [
             'align_double_arrow' => true,
