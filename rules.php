@@ -37,9 +37,9 @@ return Config::create()
         'no_blank_lines_after_class_opening' => true,
         'no_blank_lines_after_phpdoc'        => true,
         'object_operator_without_whitespace' => true,
-        'binary_operator_spaces' => [
+        'binary_operator_spaces'             => [
             'align_double_arrow' => true,
-            'align_equals' => false,
+            'align_equals'       => false,
         ],
         'self_accessor'                      => false,
         'single_quote'                       => true,
