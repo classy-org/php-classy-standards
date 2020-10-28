@@ -6,7 +6,7 @@
 		"php-classy-precommit-hook"
 	],
 	"require": {
-		"friendsofphp/php-cs-fixer": "2.4.2"
+		"friendsofphp/php-cs-fixer": "2.16.4"
 	},
 	"license": "MIT",
 	"version": "1.0.4"
